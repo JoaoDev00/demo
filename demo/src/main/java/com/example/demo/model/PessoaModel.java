@@ -1,16 +1,7 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Table(name = "pessoa")
 @Entity
@@ -20,8 +11,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class PessoaModel {
+
     @Id
-    @GeneratedValue(strategy = GeneratedValue.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
@@ -30,9 +22,9 @@ public class PessoaModel {
     private String telefone;
 
     @Enumerated(EnumType.STRING)
-    private String tipoPessoa;
+    private TipoPessoa tipoPessoa;
 
-    public PessoaModel(String nome, String email, String senha, String telefone, String tipoPessoa) {
+    public PessoaModel(String nome, String email, String senha, String telefone, TipoPessoa tipoPessoa) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
