@@ -9,8 +9,8 @@ import com.example.demo.model.UsuarioModel;
 import com.example.demo.service.PessoaService;
 
 @RestController
-@RequestMapping("/pessoas")
-public class PessoaController {
+@RequestMapping("/usuarios")
+public class UsuarioController {
 
     @Autowired
     private PessoaService pessoaService;

@@ -1,10 +1,12 @@
 package com.example.demo.model;
 
+import jakarta.persistence.*;
+import lombok.*;
 import java.time.LocalDate;
 
 public class EmprestimoModel {
 
-    Long id;
+    private Long id;
 
     private LivroModel livro;
 

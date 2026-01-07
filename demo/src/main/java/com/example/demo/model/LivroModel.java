@@ -1,12 +1,21 @@
 package com.example.demo.model;
 
-import java.util.List;
-import java.io.ObjectInputFilter.Status;
+import jakarta.persistence.*;
+import lombok.*;
 
+@Table(name = "livro")
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class LivroModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String titulo;
 
     private String autor;
@@ -17,5 +26,6 @@ public class LivroModel {
 
     private Integer anoPublicacao;
 
+    @Enumerated(EnumType.STRING)
     private StatusLivro status;
 }

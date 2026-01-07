@@ -5,4 +5,3 @@ public enum StatusLivro {
     EMPRESTADO,
     RESERVADO
 }
-
