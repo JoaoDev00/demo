@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.cadastro.DadosCadastro;
-import com.example.demo.model.PessoaModel;
+import com.example.demo.model.UsuarioModel;
 import com.example.demo.service.PessoaService;
 
 @RestController
@@ -16,24 +16,24 @@ public class PessoaController {
     private PessoaService pessoaService;
 
     @PostMapping
-    public PessoaModel cadastrarPessoa(@RequestBody DadosCadastro dados) {
-        PessoaModel pessoa = new PessoaModel(dados.nome(), dados.email(), dados.senha(), dados.telefone(), dados.tipoPessoa());
+    public UsuarioModel cadastrarPessoa(@RequestBody DadosCadastro dados) {
+        UsuarioModel pessoa = new UsuarioModel(dados.nome(), dados.email(), dados.senha(), dados.telefone(), dados.tipoPessoa());
         return pessoaService.criarPessoa(pessoa);
     }
 
     @GetMapping
-    public List<PessoaModel> listar() {
+    public List<UsuarioModel> listar() {
         return pessoaService.listarPessoas();
     }
 
     @GetMapping("/{id}")
-    public PessoaModel buscarPorId(@PathVariable Long id) {
+    public UsuarioModel buscarPorId(@PathVariable Long id) {
         return pessoaService.consultarPessoa(id);
     }
 
     @PutMapping("/{id}")
-    public PessoaModel atualizar(@PathVariable Long id, @RequestBody DadosCadastro dados) {
-        PessoaModel pessoa = new PessoaModel(dados.nome(), dados.email(), dados.senha(), dados.telefone(), dados.tipoPessoa());
+    public UsuarioModel atualizar(@PathVariable Long id, @RequestBody DadosCadastro dados) {
+        UsuarioModel pessoa = new UsuarioModel(dados.nome(), dados.email(), dados.senha(), dados.telefone(), dados.tipoPessoa());
         return pessoaService.atualizarPessoa(id, pessoa);
     }
 

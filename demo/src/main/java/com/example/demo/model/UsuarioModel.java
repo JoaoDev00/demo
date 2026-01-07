@@ -10,7 +10,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class PessoaModel {
+public class UsuarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class PessoaModel {
     @Enumerated(EnumType.STRING)
     private TipoPessoa tipoPessoa;
 
-    public PessoaModel(String nome, String email, String senha, String telefone, TipoPessoa tipoPessoa) {
+    public UsuarioModel(String nome, String email, String senha, String telefone, TipoPessoa tipoPessoa) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;

@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.PessoaModel;
+import com.example.demo.model.UsuarioModel;
 import com.example.demo.repository.PessoaRepository;
 
 @Service
@@ -13,20 +13,20 @@ public class PessoaService {
     @Autowired
     private PessoaRepository pessoaRepository;
 
-    public PessoaModel criarPessoa(PessoaModel pessoa){
+    public UsuarioModel criarPessoa(UsuarioModel pessoa){
         return pessoaRepository.save(pessoa);
     }
 
-    public PessoaModel consultarPessoa(Long id){
+    public UsuarioModel consultarPessoa(Long id){
         return pessoaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Pessoa não encontrada"));
     }
 
-    public List<PessoaModel> listarPessoas() {
+    public List<UsuarioModel> listarPessoas() {
         return pessoaRepository.findAll();
     }
 
-    public PessoaModel atualizarPessoa(Long id, PessoaModel pessoa) {
+    public UsuarioModel atualizarPessoa(Long id, UsuarioModel pessoa) {
         if (!pessoaRepository.existsById(id)) {
             throw new RuntimeException("Pessoa não encontrada");
         }
