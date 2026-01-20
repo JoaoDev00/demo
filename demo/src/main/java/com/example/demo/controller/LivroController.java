@@ -3,7 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 import org.springframework.web.bind.annotation.*; // Importa as anotações do Spring
 import com.example.demo.model.LivroModel;
-import com.example.demo.service.LivroRepository;
+import com.example.demo.repository.LivroRepository;
 
 @RestController // 1. Diz que esta classe é um controlador REST
 @RequestMapping("/livros") // 2. Mapeia as requisições para /livros
