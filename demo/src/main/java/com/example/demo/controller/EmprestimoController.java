@@ -19,4 +19,9 @@ public class EmprestimoController {
     public EmprestimoModel realizar(@PathVariable Long livroId, @PathVariable Long pessoaId) {
         return emprestimoService.realizarEmprestimo(livroId, pessoaId);
     }
+
+    @PostMapping("/devolver/{emprestimoId}")
+    public EmprestimoModel devolver(@PathVariable Long emprestimoId) {
+        return emprestimoService.devolverLivro(emprestimoId);
+    }
 }
